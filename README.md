@@ -2,62 +2,50 @@
 
 ### Travel Smarter. Manage Better. Stay Safer.
 
-**LUMORA** is a modern web application designed to bring travel planning, budget management, trip exploration, contact management, and personal safety features together in one place.
-
-Built with a modern frontend stack and Supabase integration, LUMORA aims to provide a convenient, organized experience for managing travel-related activities.
+LUMORA is a modern web application that brings travel planning, budget management, trip exploration, contact management, and personal safety features together in one place.
 
 <p align="center">
-  <a href="YOUR_LIVE_WEBSITE_URL">
-    <img src="https://img.shields.io/badge/🌐_Live_Demo-Visit_LUMORA-7C3AED?style=for-the-badge" alt="Visit LUMORA Live Website" />
-  </a>
-  <a href="https://github.com/priyankanadendla/-LUMORA">
-    <img src="https://img.shields.io/badge/GitHub-Source_Code-181717?style=for-the-badge&logo=github" alt="GitHub Repository" />
-  </a>
+  <a href="https://lumora-full-stack-tr-f4ak.bolt.host/#/profile"><img src="https://img.shields.io/badge/🌐_LIVE_DEMO-Visit_LUMORA-7C3AED?style=for-the-badge" alt="Live Demo" /></a>
+  <a href="https://github.com/priyankanadendla/-LUMORA"><img src="https://img.shields.io/badge/GitHub-Source_Code-181717?style=for-the-badge&logo=github" alt="GitHub Repository" /></a>
 </p>
 
 ---
 
 ##  Project Links
 
-| Resource | Link |
-|---|---|
-|  Live Website | [Open LUMORA](YOUR_LIVE_WEBSITE_URL) |
-|  GitHub Repository | [View Source Code](https://github.com/priyankanadendla/-LUMORA) |
+-  **Live Website:** [Open LUMORA](https://lumora-full-stack-tr-f4ak.bolt.host/#/profile)
+-  **GitHub Repository:** [View Source Code](https://github.com/priyankanadendla/-LUMORA)
 
-> **Note:** Replace `YOUR_LIVE_WEBSITE_URL` with the actual deployed website URL before publishing this README.
+##  About LUMORA
 
-##  About the Project
+LUMORA is designed to bring useful travel-related tools into one application. It provides a structured interface for trips, budgets, exploration, contacts, user profiles, and safety-related features.
 
-LUMORA brings together several travel-focused tools in a single application. Its interface includes pages for trips, budgets, exploration, contacts, user profiles, and safety-related features.
+##  Features
 
-The project is structured to support frontend development and integration with backend services through Supabase.
+-  **Authentication:** Sign-in, registration, and password-reset interfaces.
+-  **Dashboard:** Central access to application features.
+-  **Trip Management:** Trip listing and individual trip details.
+-  **Budget Management:** A dedicated travel budgeting section.
+-  **Explore:** An interface for discovering travel-related content.
+-  **Contact Management:** A dedicated contacts page.
+-  **Personal Safety:** A safety-focused section.
+-  **Trip Sharing:** An interface for sharing trip-related information.
+-  **User Profile:** A dedicated profile page.
+-  **Backend Integration:** Supabase client configuration, database migrations, and a serverless function.
 
-##  Key Features
+*Feature availability depends on implementation and backend configuration.*
 
--  **Authentication** — Sign-in, registration, and password reset interfaces.
--  **Dashboard** — A central interface for navigating application features.
--  **Trip Management** — View trips and access individual trip details.
--  **Budget Management** — A dedicated section for travel budgeting.
--  **Explore** — Discover travel-related content through the exploration interface.
--  **Contact Management** — A dedicated page for contact-related workflows.
--  **Personal Safety** — Safety-focused functionality within the application.
--  **Trip Sharing** — An interface for sharing trip-related information.
--  **User Profile** — A dedicated profile page.
--  **Backend Integration** — Supabase client setup, database migrations, and a serverless function.
-
-*The availability of individual features depends on their implementation and backend configuration.*
-
-## 🛠️ Technology Stack
+##  Tech Stack
 
 | Technology | Purpose |
 |---|---|
-| React | Component-based user interface |
-| TypeScript | Type-safe application development |
+| React | User interface |
+| TypeScript | Type-safe development |
 | Vite | Development server and build tooling |
-| Tailwind CSS | Styling and responsive UI |
+| Tailwind CSS | Styling |
 | Supabase | Backend and database integration |
 | ESLint | Code quality checks |
-| Git & GitHub | Version control and source-code hosting |
+| Git & GitHub | Version control and source hosting |
 
 ##  Project Structure
 
@@ -90,8 +78,6 @@ LUMORA/
 
 ### Prerequisites
 
-Install the following tools:
-
 - [Node.js](https://nodejs.org/)
 - npm
 - [Git](https://git-scm.com/)
@@ -102,7 +88,7 @@ Install the following tools:
 git clone https://github.com/priyankanadendla/-LUMORA.git
 ```
 
-### 2. Open the Project Directory
+### 2. Navigate to the Project
 
 ```bash
 cd -LUMORA
@@ -116,26 +102,24 @@ npm install
 
 ### 4. Configure Environment Variables
 
-If required by the application, create a `.env` file in the project root and add the Supabase configuration expected by `src/lib/supabase.ts`.
+If backend credentials are required, create a `.env` file in the project root and use the variable names expected by `src/lib/supabase.ts`.
 
-Example only:
+Example for a typical Vite and Supabase configuration:
 
 ```env
 VITE_SUPABASE_URL=your_supabase_project_url
 VITE_SUPABASE_ANON_KEY=your_supabase_publishable_or_anon_key
 ```
 
-Use the exact variable names required by the source code.
+Check the source code for the exact required variable names. Never commit passwords, private API keys, or Supabase service-role keys.
 
-**Never commit passwords, private API keys, or Supabase service-role keys.**
-
-### 5. Start the Development Server
+### 5. Run the Development Server
 
 ```bash
 npm run dev
 ```
 
-Open the local URL shown in your terminal.
+Open the local URL printed in your terminal.
 
 ### 6. Build for Production
 
@@ -149,76 +133,51 @@ npm run build
 npm run lint
 ```
 
-These commands depend on the scripts configured in `package.json`.
+Available commands depend on the scripts in `package.json`.
 
-##  Backend & Database
+## 🗄️ Backend & Database
 
-The repository contains Supabase configuration, database migrations, and a serverless function.
+The repository includes Supabase configuration, SQL migration files, and a serverless function. Configure the appropriate Supabase project, environment variables, authentication, database permissions, and Row Level Security policies before production use.
 
-To configure backend functionality:
+Review migration files before applying them to a database. A working frontend does not automatically mean the backend is fully configured.
 
-1. Create or select a Supabase project.
-2. Configure the required environment variables.
-3. Review the SQL files in `supabase/migrations/`.
-4. Apply migrations to the intended database after reviewing them.
-5. Configure authentication, database permissions, and Row Level Security (RLS).
-6. Test backend functionality before production use.
+## 🌍 Deployment
 
-Running the frontend locally does not by itself confirm that all backend features are configured.
+The live website is hosted at:
 
-##  Deployment
+**[Open LUMORA Live Demo](https://lumora-full-stack-tr-f4ak.bolt.host/#/profile)**
 
-LUMORA can be deployed to a compatible hosting platform such as:
+When deploying a new version, verify the production build, environment variables, authentication, database access, and application routes.
 
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+##  Security
 
-General deployment workflow:
-
-1. Connect the GitHub repository to your hosting provider.
-2. Configure environment variables.
-3. Set the appropriate build command, such as `npm run build`.
-4. Configure the output directory according to the Vite project settings, typically `dist`.
-5. Deploy and test the website.
-6. Replace `YOUR_LIVE_WEBSITE_URL` in this README with the actual public URL.
-
-##  Security Best Practices
-
-- Keep private credentials out of the repository.
+- Keep private credentials out of source control.
 - Use environment variables for configuration.
-- Review authentication and database access policies.
-- Protect sensitive user data.
-- Verify serverless functions and permissions before production deployment.
+- Review database access policies and authentication flows.
+- Never expose Supabase service-role credentials in frontend code.
 
 ##  Future Improvements
 
-Potential areas for further development:
-
-- Enhanced trip planning workflows.
-- Improved budget tracking.
-- Responsive UI refinements.
-- Additional automated tests.
-- Stronger backend validation and security checks.
-- Continuous integration and deployment.
+- Enhance trip planning and budget workflows.
+- Improve responsive design and accessibility.
+- Add automated testing.
+- Strengthen backend validation and security checks.
+- Improve deployment automation.
 
 ##  Contributing
 
-Suggestions and contributions are welcome.
-
 1. Fork the repository.
 2. Create a feature branch.
-3. Implement your changes.
-4. Test the application.
-5. Submit a pull request.
+3. Make and test your changes.
+4. Submit a pull request.
 
 ##  License
 
-No license has been specified yet. Add an appropriate license if you intend to define how others may reuse or distribute this project.
+No license has been specified yet. Add a suitable license if you intend to define how others may reuse or distribute this project's code.
 
 ---
 
 <p align="center">
-  <strong> LUMORA — Plan Smarter. Travel Better. Stay Safer.</strong>
-  <br/>
+  <strong> LUMORA — Travel Smarter. Manage Better. Stay Safer.</strong><br/>
   Built with React, TypeScript, Vite, and Supabase.
 </p>
